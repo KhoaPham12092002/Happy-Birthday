@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Chào mừng này nhà giáo Việt Nam 20/11 </title>
+    <title>Chúc mừng sinh nhật nhé </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
     <style>
@@ -93,26 +93,26 @@
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: #ed3073;">
-        SỐ NGÀY HẠNH PHÚC TRONG NĂM CỦA THẦY : <!--&lt;!&ndash;tiêu đề dưới&ndash;&gt;-->
+        SỐ NGÀY EM ĐÃ MANG MANG ĐẾN HẠNH PHÚC CHO CUỘC ĐỜI LÀ : <!--&lt;!&ndash;tiêu đề dưới&ndash;&gt;-->
     <br/>
     <span id="span_dt_dt"></span>
 </p>
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("20/11/2022 00:00:00"); // ngày sinh
+        BirthDay = new Date("29/12/2003 00:00:00"); // ngày sinh
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
         secondsold = Math.floor(sectimeold);
         msPerDay = 24 * 60 * 60 * 1000
         e_daysold = timeold / msPerDay
-        daysold = 365 //Math.floor(e_daysold);
+        daysold = Math.floor(e_daysold);
         e_hrsold = (e_daysold - daysold) * 24;
-        hrsold = 0 //Math.floor(e_hrsold);
+        hrsold = Math.floor(e_hrsold);
         e_minsold = (e_hrsold - hrsold) * 60;
-        minsold = 0 //Math.floor((e_hrsold - hrsold) * 60);
-        seconds = 0 //Math.floor((e_minsold - minsold) * 60);
+        minsold = Math.floor((e_hrsold - hrsold) * 60);
+        seconds = Math.floor((e_minsold - minsold) * 60);
         span_dt_dt.innerHTML = daysold + "NGÀY" + hrsold + "GIỜ" + minsold + "PHÚT" + seconds + "GIÂY";
     }
     show_date_time();
@@ -123,7 +123,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
             
-            S.UI.simulate("Hôm nay là 20/11|Em muốn nói là|#countdown 3|CHÚC THẦY LUN DUI|VÀ|CHO ĐIỂM EM|CAO CAO|#rectangle 15x15|#circle 12 |#time"); // nội dung á
+            S.UI.simulate("Hôm nay là ngày sinh nhật |Anh muốn nói là|#countdown 3|TUỔI MỚI|HÃY LUÔN HẠNH PHÚC| HỒN NHIÊN|TỰ TIN|À NHỚ CƯỜI NỮA| EM CƯỜI XINH LẮM Á|NHỚ NHA!!!|#rectangle 15x15|#circle 12 |#time"); // nội dung á
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
