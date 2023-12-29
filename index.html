@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Chúc mừng sinh nhật nhé </title>
+    <title>HAPPY BIRTHDAY</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
     <style>
@@ -86,21 +86,17 @@
 </head>
 
 <body>
-<!--&lt;!&ndash;ảnh bạn gái&ndash;&gt;-->
-<div class="cs">
-    <img src=" " id="logo"> <!--&lt;!&ndash;nếu có ảnh bạn gái bỏ link vô đây&ndash;&gt;-->
 
-</div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: #ed3073;">
-        SỐ NGÀY EM ĐÃ MANG MANG ĐẾN HẠNH PHÚC CHO CUỘC ĐỜI LÀ : <!--&lt;!&ndash;tiêu đề dưới&ndash;&gt;-->
+    世界已经有你
     <br/>
     <span id="span_dt_dt"></span>
 </p>
 <script language="javascript">
-  /*  function show_date_time() {
+    function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("29/12/2003 00:00:00");//这个日期是可以修改的
+        BirthDay = new Date("12/09/2003 00:00:00");//这个日期是可以修改的
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -113,45 +109,17 @@
         e_minsold = (e_hrsold - hrsold) * 60;
         minsold = Math.floor((e_hrsold - hrsold) * 60);
         seconds = Math.floor((e_minsold - minsold) * 60);
-        span_dt_dt.innerHTML = daysold + "ngày" + hrsold + "giờ" + minsold + "phút" + seconds + "giây";
+        span_dt_dt.innerHTML = daysold + "Day" + hrsold + "h" + minsold + "'" + seconds + "s";
     }
-    show_date_time();*/
-   function show_date_time() {
-    window.setTimeout(show_date_time, 1000);
-
-    var BirthDay = new Date("12/29/2003 00:00:00");
-    var today = new Date();
-    var timeDiff = today - BirthDay;
-
-    if (isNaN(timeDiff)) {
-        // Handle the case where the date format is incorrect
-        console.error("Invalid date format");
-        return;
-    }
-
-    var seconds = Math.floor(timeDiff / 1000);
-    var minutes = Math.floor(seconds / 60);
-    var hours = Math.floor(minutes / 60);
-    var days = Math.floor(hours / 24);
-
-    var remainingHours = hours % 24;
-    var remainingMinutes = minutes % 60;
-    var remainingSeconds = seconds % 60;
-
-    var resultString = days + " ngày " + remainingHours + " giờ " + remainingMinutes + " phút " + remainingSeconds + " giây";
-    document.getElementById('span_dt_dt').innerHTML = resultString;
-}
-
-show_date_time();
-
+    show_date_time();
 </script>
 <script>
     var S = {
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-            
-            S.UI.simulate("HÔM NAY SINH NHẬT EM|ANH MÚN NÓI LÀ|#countdown 3|TUỔI MỚI|HÃY LUÔN HẠNH PHÚC| HỒN NHIÊN|TỰ TIN|À NHỚ CƯỜI NỮA| EM CƯỜI XINH LẮM Á|NHỚ NHA!!!|#rectangle 15x15|#circle 12 |#time"); // nội dung á
+            //想说的话
+            S.UI.simulate("HÔM NAY SINH NHẬT EM|ANH MÚN NÓI LÀ|#countdown 3|TUỔI MỚI|HÃY LUÔN HẠNH PHÚC| HỒN NHIÊN|TỰ TIN|À NHỚ CƯỜI NỮA| EM CƯỜI XINH LẮM Á|NHỚ NHA!!!|#rectangle 15x15|#circle 12 |#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -604,12 +572,9 @@ show_date_time();
     }());
     S.init();
 </script>
-let music_url = "happybirthday.mp3";
-      let _music = new Audio(music_url);
-           window.onclick = function() {
-        if(init_flag) return;
-        init_flag = true;
-        _music.play();
-        init();
+<!--//音乐可改-->
+<audio autoplay="autoplay" loop="loop">
+    <source src="happybirthday.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>
