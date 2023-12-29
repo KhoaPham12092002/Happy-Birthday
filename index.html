@@ -116,37 +116,34 @@
         span_dt_dt.innerHTML = daysold + "ngày" + hrsold + "giờ" + minsold + "phút" + seconds + "giây";
     }
     show_date_time();*/
-    function show_date_time() {
-    // Set a timeout to call the function every 1000 milliseconds (1 second)
+   function show_date_time() {
     window.setTimeout(show_date_time, 1000);
 
-    // Set the birthdate (December 29, 2003 00:00:00)
     var BirthDay = new Date("12/29/2003 00:00:00");
-
-    // Get the current date and time
     var today = new Date();
-
-    // Calculate the time difference between the birthdate and the current date
     var timeDiff = today - BirthDay;
 
-    // Calculate days, hours, minutes, and seconds
+    if (isNaN(timeDiff)) {
+        // Handle the case where the date format is incorrect
+        console.error("Invalid date format");
+        return;
+    }
+
     var seconds = Math.floor(timeDiff / 1000);
     var minutes = Math.floor(seconds / 60);
     var hours = Math.floor(minutes / 60);
     var days = Math.floor(hours / 24);
 
-    // Calculate remaining hours, minutes, and seconds
     var remainingHours = hours % 24;
     var remainingMinutes = minutes % 60;
     var remainingSeconds = seconds % 60;
 
-    // Display the result in an HTML element with the id 'span_dt_dt'
     var resultString = days + " ngày " + remainingHours + " giờ " + remainingMinutes + " phút " + remainingSeconds + " giây";
     document.getElementById('span_dt_dt').innerHTML = resultString;
 }
 
-// Call the function to start the countdown
 show_date_time();
+
 </script>
 <script>
     var S = {
@@ -607,19 +604,12 @@ show_date_time();
     }());
     S.init();
 </script>
-<!--// chổ đổi nhạc nè-->
-<audio id="audioPlayer" loop>
-    <source src="happybirthday.mp3" type="audio/mpeg">
-</audio>
-
-<!-- Thêm một nút, khi click vào sẽ kích hoạt phát nhạc -->
-<button onclick="batNhac()">Bật Nhạc</button>
-
-<script>
-    function batNhac() {
-        var audio = document.getElementById("audioPlayer");
-        audio.play();
-    }
-</script>
+let music_url = "happybirthday.mp3";
+      let _music = new Audio(music_url);
+           window.onclick = function() {
+        if(init_flag) return;
+        init_flag = true;
+        _music.play();
+        init();
 </body>
 </html>
