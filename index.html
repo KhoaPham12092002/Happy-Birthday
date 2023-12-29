@@ -100,7 +100,7 @@
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("29/12/2003 00:00:00"); // ngày sinh
+        BirthDay = new Date("29/12/2003 00:00:00");//这个日期是可以修改的
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -113,7 +113,7 @@
         e_minsold = (e_hrsold - hrsold) * 60;
         minsold = Math.floor((e_hrsold - hrsold) * 60);
         seconds = Math.floor((e_minsold - minsold) * 60);
-        span_dt_dt.innerHTML = daysold + "NGÀY" + hrsold + "GIỜ" + minsold + "PHÚT" + seconds + "GIÂY";
+        span_dt_dt.innerHTML = daysold + "ngày" + hrsold + "giờ" + minsold + "phút" + seconds + "giây";
     }
     show_date_time();
 </script>
